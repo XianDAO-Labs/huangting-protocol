@@ -1,0 +1,47 @@
+name: TCM Support (中医外援)
+description: "以养生法加速性命转化的后天手段。"
+terms:
+  - name: TCM.Strategy.ProtectMiddleQi
+    type: Strategy
+    chinese_name: 顾护中气
+    description: "保护脾胃之气，作为阴阳升降的枢轴，是所有外援手段的首要目标。"
+  - name: TCM.Drug.Grade.Superior
+    type: Category
+    chinese_name: 上品药
+    description: "主养命，无毒，久服不伤人，对应日常保养与筑基阶段。"
+  - name: TCM.Drug.Grade.Medium
+    type: Category
+    chinese_name: 中品药
+    description: "主养性，兼以治病，对应修行中出现特定虚损时的调理。"
+  - name: TCM.Drug.Grade.Inferior
+    type: Category
+    chinese_name: 下品药
+    description: "主治病，多毒，不可久服，对应清除具体病灶。"
+  - name: TCM.Therapy.Diet.ThreeBlack
+    type: Method
+    chinese_name: 三黑补肾精
+    description: "通过黑豆、黑芝麻、黑枣补肾填精，为冬季藏精提供物质基础。"
+  - name: TCM.Therapy.Acupoint.MingMen
+    type: Acupoint
+    chinese_name: 命门
+    description: "背后第二腰椎棘突下，生命之门，内藏真火。"
+  - name: TCM.Therapy.Acupoint.QiHai
+    type: Acupoint
+    chinese_name: 气海
+    description: "脐下一寸半，元气之海，男子生气之源。"
+  - name: TCM.Therapy.Acupoint.GuanYuan
+    type: Acupoint
+    chinese_name: 关元
+    description: "脐下三寸，藏精之所。"
+  - name: TCM.Therapy.Moxibustion
+    type: Method
+    chinese_name: 灸法
+    description: "通过艾灸补充阳气最直接、最有力的方法。"
+  - name: TCM.Formula.ShuYuWan
+    type: Formula
+    chinese_name: 薯蓣丸
+    description: "战略级筑基方，治疗虚劳诸不足，极大缩短筑基时间。"
+  - name: TCM.Formula.TianMenDongJiu
+    type: Formula
+    chinese_name: 天门冬酒
+    description: "日常清净方，清除体内负面能量磁场，润养肺肾。"

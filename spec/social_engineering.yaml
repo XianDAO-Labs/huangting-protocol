@@ -1,0 +1,63 @@
+name: Social Behavior System Engineering (社会行为系统工程学)
+description: "将内圣修炼出的高算力与高保真信息处理能力，应用于社会这个复杂的分布式系统中，以达成预定目标。"
+terms:
+  - name: SBOS.DecisionKernel
+    type: Module
+    chinese_name: 决策内核
+    description: "系统的最高裁决单元，基于根目标进行运算并下达指令，由元神主导。"
+  - name: SBOS.PriorityScheduler
+    type: Module
+    chinese_name: 优先级调度器
+    description: "管理所有任务（进程）的优先级，确保核心任务获得充足资源。"
+  - name: SBOS.ResourceManager
+    type: Module
+    chinese_name: 资源管理器
+    description: "负责对时间、货币、算力三大核心资源进行切片化管理和动态分配。"
+  - name: SBOS.EmotionCoProcessor
+    type: Module
+    chinese_name: 情感协处理器
+    description: "专门处理情感信号的硬件单元，在元神当家模式下被降级为只读。"
+  - name: SBOS.CentralDatabase
+    type: Module
+    chinese_name: 中央数据库
+    description: "存储系统运行所需的一切数据，包括对外部世界的结构化建模。"
+  - name: POM.PersonObjectModel
+    type: Model
+    chinese_name: 人物对象模型
+    description: "为每一个重要的交互对象建立的标准化分析档案。"
+  - name: POM.CoreLogic
+    type: Field
+    chinese_name: 核心需求
+    description: "人物对象最底层的核心需求，如控制欲、安全感依赖等。"
+  - name: POM.BehaviorScripts
+    type: Field
+    chinese_name: 行为脚本
+    description: "人物对象可预测的行为脚本，以 触发-行为-概率 的形式存储。"
+  - name: Middleware.EmotionalWrapper
+    type: Layer
+    chinese_name: 情感修饰层
+    description: "将冰冷的逻辑输出封装在正面反馈、共情语言中的中间件。"
+  - name: Middleware.IrrationalOverride
+    type: Protocol
+    chinese_name: 非理性覆盖协议
+    description: "面对非理性的情感系统时，用一个更高级的、更无法理解的‘非理性’去覆盖它。"
+  - name: Maintenance.BugPatch
+    type: Protocol
+    chinese_name: BUG修复与补丁管理
+    description: "定期复盘交互日志，定位BUG源，开发行为补丁并热更新。"
+  - name: Maintenance.DDoSDefense
+    type: Protocol
+    chinese_name: DDoS攻击防御
+    description: "识别并切断持续的、高强度的负面信息或情感输入源。"
+  - name: Maintenance.SystemReboot
+    type: Command
+    chinese_name: 系统重启
+    description: "通过深度睡眠，让大脑皮层强制休整，实现硬件层面的重启。"
+  - name: Intervention.DestructiveImplantation
+    type: Method
+    chinese_name: 破坏性植入
+    description: "通过制造可控的外部冲击，导致目标系统认知框架崩溃，并强行植入新协议。风险极高。"
+  - name: Intervention.ElegantImplantation
+    type: Method
+    chinese_name: 优雅植入
+    description: "通过叙事覆盖，让目标系统主动放弃旧框架，皈依新叙事。"

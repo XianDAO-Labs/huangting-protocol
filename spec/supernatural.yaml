@@ -1,0 +1,43 @@
+name: Supernatural Abilities (神通)
+description: "超越后天时空与物质限制所产生的种种妙用的总称，其根源是元神驾驭先天一炁。"
+terms:
+  - name: State.TaiJi.Gateway
+    type: State
+    chinese_name: 玄关一窍
+    description: "无极与太极的关口，先天与后天的交界，神气合一时自开的核心窍穴。"
+  - name: State.TaiJi.FirstYang
+    type: Event
+    chinese_name: 一阳来复
+    description: "从无极静态转入太极动态的初动时刻，系统从休眠切换至激活的临界点。"
+  - name: TrueElixir
+    type: Object
+    chinese_name: 真种
+    description: "太极状态中孕育的高度凝聚生命能量结晶，炼丹的核心'药材'。"
+  - name: EnergyCore.TrueBreath
+    type: Process
+    chinese_name: 真息/内呼吸
+    description: "丹田气穴的自主开阖与能量交换，生命最底层的呼吸形式（非口鼻呼吸）。"
+  - name: TrueSelf.MatterControl
+    type: Ability
+    chinese_name: 心能转物
+    description: "元神驾驭先天一炁，将其贯注于物质世界的能力。"
+  - name: InternalForce
+    type: Object
+    chinese_name: 内劲
+    description: "先天一炁高度凝聚后产生的强大穿透力与整合力，区别于后天肌肉之'力'。"
+  - name: CosmicServer.Resonance.Mind
+    type: Ability
+    chinese_name: 他心通
+    description: "元神波纹与他人元神波纹产生共鸣感应的能力，心灵感应的高级形式。"
+  - name: CosmicServer.Resonance.Time
+    type: Ability
+    chinese_name: 预知
+    description: "元神超越线性时间，感知未来信息片段的能力。"
+  - name: TrueSelf.Resonance
+    type: State
+    chinese_name: 心心相印
+    description: "修炼者元神与他人元神直接共鸣的高级感应状态。"
+  - name: CosmicServer.Resonance
+    type: Category
+    chinese_name: 神通
+    description: "元神当家后超越后天时空与物质限制所产生的种种妙用的总称。"

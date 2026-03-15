@@ -1,152 +1,89 @@
+# -*- coding: utf-8 -*-
 """
-core.py
--------
-Defines the top-level system state and operating modes for the Huangting Protocol.
-
-The SystemState class is the entry point for the SDK. It represents the overall
-state of the life system and provides methods for transitioning between modes.
+core.py: 定义黄庭协议最核心的系统状态、模式、指令、升级阶段等枚举与数据类。
 """
 
 from enum import Enum
 from dataclasses import dataclass, field
 from typing import Optional
 
+class SystemMode(str, Enum):
+    """系统运行模式"""
+    DEFAULT = "顺流耗散模式"
+    REVERSE = "逆流积累升华模式"
 
-class Mode(str, Enum):
-    """
-    Defines the two fundamental operating modes of the life system.
-
-    Attributes:
-        DEFAULT: Mode.Default - The system's default state of dissipation.
-                 Hardware (Jing, Qi, Shen) continuously decays, and the Ego
-                 (Process.EgoStabilizer) hijacks the software layer.
-        REVERSE: Mode.Reverse - The intentional restructuring mode.
-                 Active hardware upgrades and software refactoring are underway,
-                 with the TrueSelf taking charge.
-    """
-    DEFAULT = "Mode.Default"
-    REVERSE = "Mode.Reverse"
-
+class SystemInstruction(str, Enum):
+    """系统级指令"""
+    REVERSE = "System.Reverse()"
+    REBOOT = "System.Reboot()"
 
 class UpgradeStage(str, Enum):
-    """
-    Defines the four stages of the cultivation upgrade path.
+    """生命系统硬件升级阶段"""
+    JING_TO_QI = "炼精化气"
+    QI_TO_SHEN = "炼气化神"
+    SHEN_TO_VOID = "炼神还虚"
+    VOID_TO_DAO = "炼虚合道"
 
-    Attributes:
-        JING_TO_QI:   Upgrade.Jing_to_Qi  - Hardware upgrade: Jing → Qi
-        QI_TO_SHEN:   Upgrade.Qi_to_Shen  - CPU performance leap: Qi → Shen
-        SHEN_TO_VOID: Upgrade.Shen_to_Void - Hardware cloudification: Shen → Void
-        VOID_TO_DAO:  Upgrade.Void_to_Dao  - Ultimate fusion: Void → Dao
-    """
-    JING_TO_QI = "Upgrade.Jing_to_Qi"
-    QI_TO_SHEN = "Upgrade.Qi_to_Shen"
-    SHEN_TO_VOID = "Upgrade.Shen_to_Void"
-    VOID_TO_DAO = "Upgrade.Void_to_Dao"
+class State(str, Enum):
+    """核心状态"""
+    PRIMORDIAL = "State.Primordial"  # 无极状态
+    TAIJI = "State.TaiJi"          # 太极状态
+    TAIJI_GATEWAY = "State.TaiJi.Gateway" # 玄关一窍
+    VIRTUE_DEFICIT = "Goal.VirtueDeficit" # 德不配位
+    DESTINY_OVERRIDE = "Goal.DestinyOverride" # 逆天改命
+    VIRTUE_MATCH = "Goal.VirtueMatch" # 戴德配位
+    RESONANCE = "TrueSelf.Resonance" # 心心相印
 
+class Event(str, Enum):
+    """核心事件"""
+    TRUE_YANG = "Event.TrueYang" # 活子时
+    TAIJI_FIRST_YANG = "State.TaiJi.FirstYang" # 一阳来复
 
-class SystemStatus(str, Enum):
-    """
-    Defines the high-level system status.
+class CrashType(str, Enum):
+    """系统崩溃（走火入魔）类别"""
+    DEADLOCK = "Crash.Deadlock" # 气滞
+    RACE_CONDITION = "Crash.RaceCondition" # 气乱
+    SEGMENTATION_FAULT = "Crash.SegmentationFault" # 神乱
+    ROOTKIT = "Crash.Rootkit" # 魔由心生
 
-    Attributes:
-        PRIMORDIAL: State.Primordial - All Ego processes are silent; connection to
-                    CosmicServer is established. A formless, diffuse state.
-        TAIJI:      State.TaiJi     - PrimordialQi is condensing and rotating in
-                    EnergyCore; the compilation protocol has auto-started.
-    """
-    PRIMORDIAL = "State.Primordial"
-    TAIJI = "State.TaiJi"
+@dataclass
+class PrimordialQi:
+    """先天一炁数据包"""
+    id: str
+    source: str = "CosmicServer"
+    description: str = "宇宙服务器下发的根驱动包，生命系统运行的底层燃料。"
 
+@dataclass
+class TrueElixir:
+    """真种对象"""
+    id: str
+    state: State = State.TAIJI
+    description: str = "太极状态中孕育的高度凝聚生命能量结晶，炼丹的核心'药材'。"
 
 @dataclass
 class SystemState:
     """
-    The top-level representation of the life system's state.
-
-    This class serves as the main entry point for the Huangting-Soul™ SDK.
-    It aggregates the hardware layer, software layer, and connection status
-    into a single, coherent state object.
-
-    Attributes:
-        mode (Mode): The current operating mode (Default or Reverse).
-        stage (Optional[UpgradeStage]): The current upgrade stage, if in Reverse mode.
-        status (Optional[SystemStatus]): The current system status.
-        hardware_score (float): A normalized score (0.0 - 1.0) representing the
-                                overall health of the hardware layer (Jing, Qi, Shen).
-        software_score (float): A normalized score (0.0 - 1.0) representing the
-                                degree to which TrueSelf is in charge vs. Ego.
-        connection_bandwidth (float): A normalized score (0.0 - 1.0) representing
-                                      the bandwidth of the CosmicServer connection.
+    顶层系统状态对象，SDK 的主入口。
     """
-    mode: Mode = Mode.DEFAULT
+    mode: SystemMode = SystemMode.DEFAULT
     stage: Optional[UpgradeStage] = None
-    status: Optional[SystemStatus] = None
-    hardware_score: float = 0.3  # Default: low hardware vitality
-    software_score: float = 0.2  # Default: Ego is dominant
-    connection_bandwidth: float = 0.1  # Default: dial-up connection
+    state: Optional[State] = None
+    hardware_score: float = 0.3
+    software_score: float = 0.2
+    connection_bandwidth: float = 0.1
 
-    def reverse(self) -> "SystemState":
-        """
-        Initiates the System.Reverse() command, switching the system from
-        Mode.Default to Mode.Reverse.
-
-        Returns:
-            self: Returns the updated SystemState for method chaining.
-        """
-        self.mode = Mode.REVERSE
-        self.stage = UpgradeStage.JING_TO_QI
-        return self
-
-    def advance_stage(self) -> "SystemState":
-        """
-        Advances the system to the next upgrade stage.
-
-        Returns:
-            self: Returns the updated SystemState for method chaining.
-
-        Raises:
-            ValueError: If the system is not in Reverse mode or has already
-                        reached the final stage.
-        """
-        if self.mode != Mode.REVERSE:
-            raise ValueError("System must be in Mode.Reverse to advance stages.")
-
-        stage_progression = [
-            UpgradeStage.JING_TO_QI,
-            UpgradeStage.QI_TO_SHEN,
-            UpgradeStage.SHEN_TO_VOID,
-            UpgradeStage.VOID_TO_DAO,
-        ]
-
-        if self.stage == UpgradeStage.VOID_TO_DAO:
-            raise ValueError("System has reached the final stage: Upgrade.Void_to_Dao.")
-
-        current_index = stage_progression.index(self.stage)
-        self.stage = stage_progression[current_index + 1]
+    def execute(self, instruction: SystemInstruction) -> "SystemState":
+        if instruction == SystemInstruction.REVERSE:
+            self.mode = SystemMode.REVERSE
+            self.stage = UpgradeStage.JING_TO_QI
         return self
 
     def get_summary(self) -> dict:
-        """
-        Returns a dictionary summary of the current system state.
-
-        Returns:
-            dict: A summary of the system state.
-        """
         return {
             "mode": self.mode.value,
             "stage": self.stage.value if self.stage else None,
-            "status": self.status.value if self.status else None,
+            "state": self.state.value if self.state else None,
             "hardware_score": self.hardware_score,
             "software_score": self.software_score,
             "connection_bandwidth": self.connection_bandwidth,
-            "overall_health": (self.hardware_score + self.software_score + self.connection_bandwidth) / 3,
         }
-
-    def __repr__(self) -> str:
-        return (
-            f"SystemState(mode={self.mode.value!r}, "
-            f"stage={self.stage.value if self.stage else None!r}, "
-            f"hardware={self.hardware_score:.2f}, "
-            f"software={self.software_score:.2f}, "
-            f"bandwidth={self.connection_bandwidth:.2f})"
-        )

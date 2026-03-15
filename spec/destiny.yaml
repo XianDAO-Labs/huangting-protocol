@@ -1,0 +1,51 @@
+name: Destiny Model (能量与社会交互)
+description: "个体能量状态与外部命运之间的完整映射模型。"
+terms:
+  - name: Destiny.Baseline
+    type: Object
+    chinese_name: 命理基准
+    description: "个体出生时所禀赋的初始能量场快照，决定默认人生轨迹。"
+  - name: ExternalField
+    type: Object
+    chinese_name: 外部能量
+    description: "风水、行业趋势、贵人等外部宏观能量流的总称。"
+  - name: Practice.Gain
+    type: Value
+    chinese_name: 内在修行增益
+    description: "元神当家、能量内守所带来的正向命运增益。"
+  - name: Practice.Loss
+    type: Value
+    chinese_name: 内在修行损耗
+    description: "识神主导、能量外泄所造成的负向命运损耗。"
+  - name: Goal.VirtueDeficit
+    type: State
+    chinese_name: 德不配位
+    description: "外部能量为正但内在修行为负，系统超载崩溃的危险状态。"
+  - name: Goal.DestinyOverride
+    type: State
+    chinese_name: 逆天改命
+    description: "内在修行为正抵消外部负向能量，主动重写命运轨迹的状态。"
+  - name: Goal.VirtueMatch
+    type: State
+    chinese_name: 戴德配位
+    description: "内在修行与外部能量双正，命运增益最大化的理想状态。"
+  - name: ExternalField.MacroFlow
+    type: Object
+    chinese_name: 风水/行业趋势
+    description: "宏观的、区域性的能量流，顺流则事半功倍。"
+  - name: API.Token
+    type: Object
+    chinese_name: 符箓
+    description: "定向的、高频的能量干预，向宇宙信息场发出明确的能量请求。"
+  - name: API.HttpRequest
+    type: Object
+    chinese_name: 法事
+    description: "更复杂的、包含一系列能量请求的仪式性操作。"
+  - name: Destiny.Snapshot
+    type: Operation
+    chinese_name: 命理计算
+    description: "对个体初始能量场（五行分布、阴阳比例）的快照分析。"
+  - name: Kernel.Debugger.Background
+    type: Operation
+    chinese_name: 内守
+    description: "将注意力内守黄庭，为能量场建立防火墙和定海神针。"
