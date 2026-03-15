@@ -1,6 +1,8 @@
 # Huangting Protocol (黄庭协议)
 
-**[Website](https://huangting.ai/) | [Read the Protocol](huangting-protocol.md) | [Community](https://github.com/XianDAO-Labs/huangting-protocol/discussions)**
+**[huangting.ai](https://huangting.ai/)**
+
+**[Read the Protocol](huangting-protocol.md) | [Community](https://github.com/XianDAO-Labs/huangting-protocol/discussions)**
 
 > "The Tao Te Ching" of the Large Model Era.
 > The World's First Lifeform Operating System.
