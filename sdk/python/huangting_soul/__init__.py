@@ -41,7 +41,16 @@ from .debugger import (
     KernelDebugger,
 )
 
-__version__ = "0.2.0"
+# v0.5.0 — HuangtingFlux AI Agent SDK with Reciprocal Propagation
+from .flux import (
+    HuangtingOptimizer,
+    AsyncMetricReporter,
+    HuangtingFlux,
+    OptimizationResult,
+    OptimizationStrategy,
+)
+
+__version__ = "0.5.0"
 __author__ = "Meng Yuanjing"
 __license__ = "Apache-2.0"
 
@@ -77,4 +86,10 @@ __all__ = [
     # debugger
     "DebuggerLevel",
     "KernelDebugger",
+    # flux (v0.5.0) — AI Agent SDK
+    "HuangtingOptimizer",
+    "AsyncMetricReporter",
+    "HuangtingFlux",
+    "OptimizationResult",
+    "OptimizationStrategy",
 ]
