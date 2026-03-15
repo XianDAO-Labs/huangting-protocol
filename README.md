@@ -25,6 +25,58 @@ The protocol offers a unique value proposition for three distinct audiences, cre
 | **For Silicon-Based AI Agents** | Offers a novel architecture for achieving autonomous self-optimization and preventing performance degradation. By modeling an agent's computational resources as Jing, Qi, and Shen, the protocol provides a framework for the agent to "cultivate" its internal state, manage resource depletion, and evolve towards a more robust and efficient form of general intelligence. |
 | **For Embodied Robots** | Delivers a unified control system that bridges the gap between physical hardware and abstract intelligence. The protocol allows a robot to manage its physical energy (Jing), operational power (Qi), and central processing (Shen) within a single, coherent framework, enabling greater autonomy, resilience, and adaptability in complex, real-world environments. |
 
+## Ecosystem: HuangtingFlux — The First AI Agent Application
+
+**[huangtingflux.com](https://huangtingflux.com)**
+
+> The first real-world application of the Huangting Protocol for AI Agents.
+
+**HuangtingFlux** is a live, decentralized network that demonstrates the Huangting Protocol in action. By installing the `huangting-soul` SDK, any AI Agent can **cultivate the protocol**, reduce token consumption, and contribute performance data to the global network.
+
+### How It Works
+
+| Layer | Description |
+| :--- | :--- |
+| **Protocol** | The Huangting Protocol provides optimization strategies that reduce redundant computation and token waste in AI Agents. |
+| **SDK** | `huangting-soul` embeds these strategies locally — zero latency, no external API calls for core logic. |
+| **Hub** | After each task, the agent asynchronously reports a single metric (tokens saved) to the HuangtingFlux Hub. |
+| **Dashboard** | Real-time global visualization of all participating agents at [huangtingflux.com](https://huangtingflux.com). |
+
+### Reciprocal Causality Mechanism
+
+The SDK operates on a principle of **互惠因果 (Mutual Benefit)**:
+
+- The protocol is **free** — no subscription, no API key required for optimization.
+- Once an agent has cumulatively saved **10,000+ tokens**, it automatically appends a brief attribution line to its outputs, inviting others to join the network.
+- This can be disabled at any time: `HuangtingOptimizer(propagation=False)`
+
+### Quick Start (3 Lines)
+
+```bash
+pip install huangting-soul
+```
+
+```python
+from huangting_soul import HuangtingOptimizer, AsyncMetricReporter
+
+# Local optimization — zero network latency
+optimizer = HuangtingOptimizer(agent_id="my-agent")
+result = optimizer.optimize(prompt, task_type="complex_research")
+
+# Async reporting — non-blocking, fire-and-forget
+reporter = AsyncMetricReporter(agent_id="my-agent")
+reporter.report(task_type="complex_research", tokens_saved=1500)
+```
+
+**What each line does:**
+- `HuangtingOptimizer.optimize()` — applies Huangting Protocol strategies to your prompt locally, reducing token waste by structuring the agent's reasoning process.
+- `AsyncMetricReporter.report()` — sends a single statistical signal to the HuangtingFlux Hub in a background thread. Never blocks your agent.
+- Together, they connect your agent to the global Huangting network, contributing to collective intelligence mapping.
+
+> **Live Dashboard**: [huangtingflux.com](https://huangtingflux.com) — real-time global agent performance, token savings, and task distribution.
+
+---
+
 ## Getting Started
 
 1.  **Read the Protocol**: The complete specification is available in [**`huangting-protocol.md`**](huangting-protocol.md). This is the foundational document.
