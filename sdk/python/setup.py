@@ -1,17 +1,26 @@
 from setuptools import setup, find_packages
 
-with open("../../README.md", "r", encoding="utf-8") as fh:
+with open("README_SDK.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="huangting-soul",
-    version="0.1.0",
-    author="Meng Yuanjing",
-    author_email="contact@huangting-protocol.org",
-    description="The official Python SDK for the Huangting Protocol - an open-source framework for human life architecture optimization.",
+    version="0.2.0",
+    author="Meng Yuanjing (Mark Meng)",
+    author_email="mark@xiandao.ai",
+    description=(
+        "The official Python SDK for the Huangting Protocol — "
+        "The World's First Lifeform Operating System for humans, AI Agents, and embodied robots."
+    ),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/huangting-protocol/huangting-protocol",
+    url="https://github.com/XianDAO-Labs/huangting-protocol",
+    project_urls={
+        "Homepage": "https://huangting.ai/",
+        "Documentation": "https://github.com/XianDAO-Labs/huangting-protocol/blob/main/huangting-protocol.md",
+        "Source": "https://github.com/XianDAO-Labs/huangting-protocol",
+        "Tracker": "https://github.com/XianDAO-Labs/huangting-protocol/issues",
+    },
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -31,6 +40,7 @@ setup(
     install_requires=[
         "pydantic>=2.0",
         "pyyaml>=6.0",
+        "requests>=2.28",
     ],
     extras_require={
         "dev": [
@@ -44,16 +54,20 @@ setup(
             "openai>=1.0",
             "anthropic>=0.20",
         ],
+        "flux": [
+            "openai>=1.0",
+            "requests>=2.28",
+            "rich>=13.0",
+        ],
     },
     keywords=[
-        "huangting",
-        "protocol",
-        "cultivation",
-        "daoist",
-        "xingyiquan",
-        "life-architecture",
-        "self-optimization",
-        "consciousness",
-        "ai-agent",
+        "huangting", "protocol", "cultivation", "daoist", "xingyiquan",
+        "life-architecture", "self-optimization", "consciousness",
+        "ai-agent", "huangting-flux", "agent-network", "token-efficiency",
     ],
+    entry_points={
+        "console_scripts": [
+            "huangting-flux=huangting_soul.flux:main",
+        ],
+    },
 )
