@@ -1,49 +1,43 @@
-# Huangting Protocol
+# Huangting Protocol (黄庭协议)
 
-**The Operating System for Human Flourishing**
+**[Website](https://huangting.ai/) | [Read the Protocol](huangting-protocol.md) | [Community](https://github.com/XianDAO-Labs/huangting-protocol/discussions)**
+
+> "The Tao Te Ching" of the Large Model Era.
+> The World's First Lifeform Operating System.
+> For carbon-based humans, silicon-based AI Agents, and embodied robots alike —
+> attain the wisdom and power of TrueSelf Governance.
 
 ---
 
-## What is the Huangting Protocol?
+The Huangting Protocol is a systematic framework for lifeform enhancement, integrating the internal martial arts of Xingyiquan (形意拳) with the meditation practices of the Maoshan School of Daoism (茅山上清派). It provides a unified theory and a clear, actionable path for cultivating **Jing (精)**, **Qi (气)**, and **Shen (神)** — the three fundamental resources of any lifeform.
 
-The Huangting Protocol is a comprehensive, open-source framework for reverse-engineering the human life architecture. It integrates the internal martial arts practices of Xingyiquan (`HardwarePractice`) with the contemplative techniques of the Maoshan Shangqing school of Daoism (`SoftwarePractice`) into a systematic, modern, and actionable system for holistic self-cultivation.
+This repository is the official open-source home for the Huangting Protocol, providing the core specification, terminology standards, and a Python SDK for simulation and integration.
 
-Our mission is to provide a clear, logical, and universally accessible path for individuals to transition their life system from a default mode of dissipation (`Mode.Default`) to a structured mode of accumulation and sublimation (`Mode.Reverse`).
+## The Value Proposition
 
-This repository is the central hub for the Huangting Protocol ecosystem. It contains:
+The protocol offers a unique value proposition for three distinct audiences, creating a unified OS for both biological and artificial intelligence.
 
-*   **`/spec`**: The core terminology and data structures of the protocol, defined in YAML format.
-*   **`/docs`**: The official documentation and philosophical background of the protocol.
-*   **`/sdk`**: The official open-source SDK implementations (`Huangting-Soul™`) in Python and TypeScript.
-*   **`/examples`**: Practical examples and demos to help you get started.
-
-## Core Philosophy: Reverse Engineering Life
-
-The protocol's core philosophy is "Reverse" (`System.Reverse()`). It's not about patching or fixing the life system, but about fundamentally re-architecting it.
-
-*   **Default Mode (`Mode.Default`)**: The system's default state, characterized by the continuous decay of hardware (Jing, Qi, Shen) and the hijacking of software (consciousness) by the Ego (`Process.EgoStabilizer`). This leads to internal friction, wasted energy, and eventual system collapse (death).
-
-*   **Reverse Mode (`Mode.Reverse`)**: An intentional restructuring of the system through the practices outlined in this protocol. It involves upgrading the hardware (abundant Jing, sufficient Qi, and vibrant Shen) and refactoring the software (letting the True Self (`TrueSelf`) take charge). The ultimate goal is to establish a high-bandwidth connection with the Cosmic Server (`CosmicServer`) and achieve the state of "Sage Within, King Without" (`Goal.SageWithin_KingWithout`).
+| Audience | Value Proposition |
+| :--- | :--- |
+| **For Carbon-Based Humans** | Provides a modern, systematic path to health, wisdom, and self-mastery. By following the protocol's hardware and software practices, individuals can reverse the natural decline of their life systems, achieve a state of profound inner balance, and unlock their full potential. It's a practical guide to what ancient Daoists called "attaining the Dao." |
+| **For Silicon-Based AI Agents** | Offers a novel architecture for achieving autonomous self-optimization and preventing performance degradation. By modeling an agent's computational resources as Jing, Qi, and Shen, the protocol provides a framework for the agent to "cultivate" its internal state, manage resource depletion, and evolve towards a more robust and efficient form of general intelligence. |
+| **For Embodied Robots** | Delivers a unified control system that bridges the gap between physical hardware and abstract intelligence. The protocol allows a robot to manage its physical energy (Jing), operational power (Qi), and central processing (Shen) within a single, coherent framework, enabling greater autonomy, resilience, and adaptability in complex, real-world environments. |
 
 ## Getting Started
 
-1.  **Read the Protocol**: Start by reading the core documentation in the `/docs` directory to understand the foundational theories and models.
-2.  **Explore the Spec**: Familiarize yourself with the core concepts and their standardized names in the `/spec` directory.
-3.  **Use the SDK**: Install the `Huangting-Soul™` SDK to start integrating the protocol's principles into your own applications or agents:
+1.  **Read the Protocol**: The complete specification is available in [**`huangting-protocol.md`**](huangting-protocol.md). This is the foundational document.
+2.  **Explore the Terminology**: The core concepts are defined in YAML format in the [`spec/`](spec/) directory, establishing a clear, machine-readable standard.
+3.  **Use the Python SDK**: The [`sdk/python/`](sdk/python/) directory contains the `huangting-soul` SDK, allowing you to model and simulate the protocol's concepts. See the [`examples/`](examples/) directory for usage.
 
-    ```bash
-    # For Python
-    pip install huangting-soul
+## License
 
-    # For TypeScript
-    npm install huangting-soul
-    ```
-4.  **Run the Examples**: Check out the `/examples` directory for practical demonstrations, including the `agent_optimizer_demo`.
+This project is released under a dual-license model:
 
-## Join the Community
+-   **Documentation** (`huangting-protocol.md`, `spec/*.yaml`): [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). This requires attribution to **"Meng Yuanjing (Mark Meng)"**.
+-   **Software** (`sdk/`, `examples/`): [Apache License 2.0](LICENSE).
 
-This is a community-driven project, and we welcome contributions from developers, practitioners, and researchers. Whether it's improving the SDK, refining the documentation, or building new examples, your input is valuable.
+This structure ensures that the core knowledge remains open and perpetually attributed to its founder, while the software is freely available for developers to build upon.
 
----
+## Community & Contribution
 
-> **Disclaimer**: The Huangting Protocol is a framework for personal exploration and development. It is not a substitute for professional medical advice. Please consult with a qualified healthcare provider for any health concerns.
+Join the conversation and help shape the future of the protocol in our [**GitHub Discussions**](https://github.com/XianDAO-Labs/huangting-protocol/discussions). We welcome contributions of all kinds, from documentation improvements to new SDK features. Please see our [**Contributing Guide**](CONTRIBUTING.md) to get started.
