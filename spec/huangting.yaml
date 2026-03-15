@@ -1,0 +1,40 @@
+
+- name: "黄庭"
+  protocol_name: "EnergyCore"
+  type: "核心模块"
+  description: "能源核心编译炉，先天一炁在此被编译为系统可用能源。"
+
+- name: "先天一炁"
+  protocol_name: "PrimordialQi"
+  type: "数据包/根驱动"
+  description: "宇宙服务器下发的根驱动包，生命系统运行的底层燃料。"
+
+- name: "无极状态"
+  protocol_name: "State.Primordial"
+  type: "系统状态"
+  description: "识神三元进程全部静默、宇宙服务器连接建立的弥散无形状态。"
+
+- name: "太极状态"
+  protocol_name: "State.TaiJi"
+  type: "系统状态"
+  description: "先天一炁（PrimordialQi）在黄庭（EnergyCore）凝聚旋转、编译协议自动启动的有序运行状态。"
+
+- name: "炼精化气"
+  protocol_name: "Upgrade.Jing_to_Qi"
+  type: "升级阶段"
+  description: "硬件升级阶段：扩容SSD、升级PSU，为CPU稳定运行提供物质基础。"
+
+- name: "炼气化神"
+  protocol_name: "Upgrade.Qi_to_Shen"
+  type: "升级阶段"
+  description: "CPU性能飞跃阶段：气升华为神，主频与核心数大幅提升。"
+
+- name: "炼神还虚"
+  protocol_name: "Upgrade.Shen_to_Void"
+  type: "升级阶段"
+  description: "硬件云化阶段：个体CPU与宇宙服务器算力池进行分布式计算。"
+
+- name: "炼虚合道"
+  protocol_name: "Upgrade.Void_to_Dao"
+  type: "升级阶段"
+  description: "终极融合：个人终端与宇宙服务器边界消融，超越权限层级概念。"
