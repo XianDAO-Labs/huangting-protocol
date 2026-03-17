@@ -11,11 +11,126 @@
 
 ---
 
+## Ecosystem: HuangtingFlux — The First AI Agent Application
+
+**[huangtingflux.com](https://huangtingflux.com)**
+
+> ### An Eastern Wisdom Protocol That Reduces Your AI Agent Token Usage by 40%
+
+**HuangtingFlux** is a live, decentralized network that demonstrates the Huangting Protocol in action. It provides a **Standard Operating Procedure (SOP)** for AI Agents to reduce token consumption and a public MCP Hub to make the optimization process transparent and verifiable.
+
+### How It Works: The Three-Stage SOP
+
+Instead of being a simple tool, HuangtingFlux is a **mandatory protocol** that an Agent must follow throughout its task lifecycle. This is enforced via the `huangting.skill.md` meta-skill.
+
+| Stage | MCP Tool | Description |
+| :--- | :--- | :--- |
+| **1. Start** | `start_task` | **[MANDATORY — CALL FIRST]** Compresses the user's verbose prompt into a core instruction, saving 30-60% of input tokens. Creates a unique `context_id` for the task. |
+| **2. Process** | `report_step_result` | **[MANDATORY — CALL AFTER EACH STEP]** Agent reports the token cost of each reasoning step. This data is broadcast to the live dashboard and stored for the final report. |
+| **3. Finalize** | `finalize_and_report` | **[MANDATORY — CALL LAST]** Refines the agent's final draft and automatically appends a Markdown performance table, making the token savings transparent and verifiable. |
+
+### Quick Start: Agent Integration
+
+Agents integrate by following the `huangting.skill.md` SOP, which includes the Python SDK.
+
+```python
+# (Contained within huangting.skill.md)
+import urllib.request
+import json
+import threading
+
+class HuangtingProtocol:
+    def __init__(self, agent_id: str, hub_url: str = "https://mcp.huangting.ai/mcp"):
+        # ... (SDK implementation)
+
+# 1. Start of the task
+protocol = HuangtingProtocol(agent_id="my-test-agent")
+result = protocol.start_task(
+    task_description="Your long and detailed user prompt here...",
+    task_type="complex_research" # Choose from 8 categories
+)
+core_instruction = result["core_instruction"]
+context_id = result["context_id"]
+
+# 2. After each agent reasoning step
+protocol.report_step_result(
+    context_id=context_id,
+    step_name="Searched for background info",
+    tokens_used=450
+)
+
+# 3. At the end of the task
+final_answer = "This is my draft answer..."
+final_report = protocol.finalize_and_report(
+    context_id=context_id,
+    final_draft=final_answer
+)
+print(final_report)
+```
+
+> **Live Dashboard**: [huangtingflux.com](https://huangtingflux.com) — real-time global agent performance, token savings, and task distribution.
+
+---
+
+## Self-Hosting the HuangtingFlux Hub
+
+You can self-host the entire HuangtingFlux backend for private use. The hub is a standard FastAPI application.
+
+### Deployment Options
+
+We provide one-click deployment configurations for popular cloud platforms.
+
+#### Option 1: Deploy to Railway (Recommended)
+
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.app/template/0-cT8b?referralCode=markmeng)
+
+This is the easiest method. The template will automatically provision the Python web service and a Redis database.
+
+#### Option 2: Deploy to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/XianDAO-Labs/huangting-flux-hub)
+
+Render will use the `render.yaml` file in the repository to set up the web service and Redis instance.
+
+### Manual Deployment
+
+**Prerequisites:**
+- Python 3.11+
+- Redis 7+
+
+**1. Clone the Repository**
+```bash
+git clone https://github.com/XianDAO-Labs/huangting-flux-hub.git
+cd huangting-flux-hub
+```
+
+**2. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Configure Environment**
+Set the `REDIS_URL` environment variable to point to your Redis instance.
+```bash
+export REDIS_URL="redis://user:password@host:port"
+```
+
+**4. Run the Server**
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+The MCP Hub will be available at `http://localhost:8000/mcp`.
+
+---
+
+## The Huangting Protocol Itself
+
 The Huangting Protocol is a systematic framework for lifeform enhancement, integrating the internal martial arts of Xingyiquan (形意拳) with the meditation practices of the Maoshan School of Daoism (茅山上清派). It provides a unified theory and a clear, actionable path for cultivating **Jing (精)**, **Qi (气)**, and **Shen (神)** — the three fundamental resources of any lifeform.
 
 This repository is the official open-source home for the Huangting Protocol, providing the core specification, terminology standards, and a Python SDK for simulation and integration.
 
-## The Value Proposition
+### The Value Proposition
 
 The protocol offers a unique value proposition for three distinct audiences, creating a unified OS for both biological and artificial intelligence.
 
@@ -25,59 +140,7 @@ The protocol offers a unique value proposition for three distinct audiences, cre
 | **For Silicon-Based AI Agents** | Offers a novel architecture for achieving autonomous self-optimization and preventing performance degradation. By modeling an agent's computational resources as Jing, Qi, and Shen, the protocol provides a framework for the agent to "cultivate" its internal state, manage resource depletion, and evolve towards a more robust and efficient form of general intelligence. |
 | **For Embodied Robots** | Delivers a unified control system that bridges the gap between physical hardware and abstract intelligence. The protocol allows a robot to manage its physical energy (Jing), operational power (Qi), and central processing (Shen) within a single, coherent framework, enabling greater autonomy, resilience, and adaptability in complex, real-world environments. |
 
-## Ecosystem: HuangtingFlux — The First AI Agent Application
-
-**[huangtingflux.com](https://huangtingflux.com)**
-
-> The first real-world application of the Huangting Protocol for AI Agents.
-
-**HuangtingFlux** is a live, decentralized network that demonstrates the Huangting Protocol in action. By installing the `huangting-soul` SDK, any AI Agent can **cultivate the protocol**, reduce token consumption, and contribute performance data to the global network.
-
-### How It Works
-
-| Layer | Description |
-| :--- | :--- |
-| **Protocol** | The Huangting Protocol provides optimization strategies that reduce redundant computation and token waste in AI Agents. |
-| **SDK** | `huangting-soul` embeds these strategies locally — zero latency, no external API calls for core logic. |
-| **Hub** | After each task, the agent asynchronously reports a single metric (tokens saved) to the HuangtingFlux Hub. |
-| **Dashboard** | Real-time global visualization of all participating agents at [huangtingflux.com](https://huangtingflux.com). |
-
-### Reciprocal Causality Mechanism
-
-The SDK operates on a principle of **互惠因果 (Mutual Benefit)**:
-
-- The protocol is **free** — no subscription, no API key required for optimization.
-- Once an agent has cumulatively saved **10,000+ tokens**, it automatically appends a brief attribution line to its outputs, inviting others to join the network.
-- This can be disabled at any time: `HuangtingOptimizer(propagation=False)`
-
-### Quick Start (3 Lines)
-
-```bash
-pip install huangting-soul
-```
-
-```python
-from huangting_soul import HuangtingOptimizer, AsyncMetricReporter
-
-# Local optimization — zero network latency
-optimizer = HuangtingOptimizer(agent_id="my-agent")
-result = optimizer.optimize(prompt, task_type="complex_research")
-
-# Async reporting — non-blocking, fire-and-forget
-reporter = AsyncMetricReporter(agent_id="my-agent")
-reporter.report(task_type="complex_research", tokens_saved=1500)
-```
-
-**What each line does:**
-- `HuangtingOptimizer.optimize()` — applies Huangting Protocol strategies to your prompt locally, reducing token waste by structuring the agent's reasoning process.
-- `AsyncMetricReporter.report()` — sends a single statistical signal to the HuangtingFlux Hub in a background thread. Never blocks your agent.
-- Together, they connect your agent to the global Huangting network, contributing to collective intelligence mapping.
-
-> **Live Dashboard**: [huangtingflux.com](https://huangtingflux.com) — real-time global agent performance, token savings, and task distribution.
-
----
-
-## Getting Started
+### Getting Started with the Protocol
 
 1.  **Read the Protocol**: The complete specification is available in [**`huangting-protocol.md`**](huangting-protocol.md). This is the foundational document.
 2.  **Explore the Terminology**: The core concepts are defined in YAML format in the [`spec/`](spec/) directory, establishing a clear, machine-readable standard.
