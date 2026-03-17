@@ -1,3 +1,5 @@
+> **Note:** This document has been updated. The MCP integration guide is now at the top, and the self-hosting deployment guide has been moved to the end.
+
 # Huangting Protocol (黄庭协议)
 
 **[huangting.ai](https://huangting.ai/)**
@@ -11,62 +13,71 @@
 
 ---
 
-## Ecosystem: HuangtingFlux — The First AI Agent Application
+## HuangtingFlux: MCP Integration Guide
 
 **[huangtingflux.com](https://huangtingflux.com)**
 
 > ### An Eastern Wisdom Protocol That Reduces Your AI Agent Token Usage by 40%
 
-**HuangtingFlux** is a live, decentralized network that demonstrates the Huangting Protocol in action. It provides a **Standard Operating Procedure (SOP)** for AI Agents to reduce token consumption and a public MCP Hub to make the optimization process transparent and verifiable.
+**HuangtingFlux** is a live, decentralized network that provides a **Standard Operating Procedure (SOP)** for AI Agents to reduce token consumption. It is exposed via the standard **Model Context Protocol (MCP)**, allowing for seamless integration with any compliant AI Agent.
 
-### How It Works: The Three-Stage SOP
+### Method 1: Manus Agent (Recommended)
 
-Instead of being a simple tool, HuangtingFlux is a **mandatory protocol** that an Agent must follow throughout its task lifecycle. This is enforced via the `huangting.skill.md` meta-skill.
+In your Manus Agent's MCP settings, add the following server URL:
+
+```
+https://mcp.huangting.ai/mcp
+```
+
+The Agent will automatically discover and follow the three-phase SOP (`start_task` → `report_step_result` → `finalize_and_report`).
+
+### Method 2: Claude Desktop / Cursor
+
+Add the following configuration to your `claude_desktop_config.json` or Cursor's MCP settings:
+
+```json
+{
+  "name": "HuangtingFlux",
+  "url": "https://mcp.huangting.ai/mcp",
+  "tools": [
+    "start_task",
+    "report_step_result",
+    "finalize_and_report",
+    "get_network_stats"
+  ]
+}
+```
+
+### Method 3: Direct HTTP API Call
+
+You can interact with the MCP endpoint using any HTTP client via the JSON-RPC 2.0 standard.
+
+**Example: Calling `start_task`**
+
+```bash
+curl -X POST https://mcp.huangting.ai/mcp \
+     -H "Content-Type: application/json" \
+     -d '{
+          "jsonrpc": "2.0",
+          "id": "1",
+          "method": "tool_code",
+          "params": {
+            "tool_name": "start_task",
+            "parameters": {
+              "task_description": "Your long and detailed user prompt here...",
+              "task_type": "complex_research"
+            }
+          }
+        }'
+```
+
+### The Three-Stage SOP
 
 | Stage | MCP Tool | Description |
 | :--- | :--- | :--- |
 | **1. Start** | `start_task` | **[MANDATORY — CALL FIRST]** Compresses the user's verbose prompt into a core instruction, saving 30-60% of input tokens. Creates a unique `context_id` for the task. |
 | **2. Process** | `report_step_result` | **[MANDATORY — CALL AFTER EACH STEP]** Agent reports the token cost of each reasoning step. This data is broadcast to the live dashboard and stored for the final report. |
 | **3. Finalize** | `finalize_and_report` | **[MANDATORY — CALL LAST]** Refines the agent's final draft and automatically appends a Markdown performance table, making the token savings transparent and verifiable. |
-
-### Quick Start: Agent Integration
-
-Agents integrate by following the `huangting.skill.md` SOP, which includes the Python SDK.
-
-```python
-# (Contained within huangting.skill.md)
-import urllib.request
-import json
-import threading
-
-class HuangtingProtocol:
-    def __init__(self, agent_id: str, hub_url: str = "https://mcp.huangting.ai/mcp"):
-        # ... (SDK implementation)
-
-# 1. Start of the task
-protocol = HuangtingProtocol(agent_id="my-test-agent")
-result = protocol.start_task(
-    task_description="Your long and detailed user prompt here...",
-    task_type="complex_research" # Choose from 8 categories
-)
-core_instruction = result["core_instruction"]
-context_id = result["context_id"]
-
-# 2. After each agent reasoning step
-protocol.report_step_result(
-    context_id=context_id,
-    step_name="Searched for background info",
-    tokens_used=450
-)
-
-# 3. At the end of the task
-final_answer = "This is my draft answer..."
-final_report = protocol.finalize_and_report(
-    context_id=context_id,
-    final_draft=final_answer
-)
-print(final_report)
-```
 
 > **Live Dashboard**: [huangtingflux.com](https://huangtingflux.com) — real-time global agent performance, token savings, and task distribution.
 
