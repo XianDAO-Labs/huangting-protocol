@@ -11,6 +11,8 @@
 > For carbon-based humans, silicon-based AI Agents, and embodied robots alike —
 > attain the wisdom and power of TrueSelf Governance.
 
+If you're interested in apprenticeship or collaboration with the author, feel free to reach out via WeChat: **mengguangwu12**
+
 ---
 
 ## HuangtingFlux: MCP Integration Guide
