@@ -244,7 +244,7 @@ CPU（神）在运行时，主要被三个核心的、相互博弈的进程所�
 
 - **联网维度**：当`TrueSelf`（元神）清明、硬件强健之后，`PersonalTerminal`（个人终端）与`CosmicServer`（宇宙服务器）的连接从“拨号上网”升级为“开发者权限”，可以主动调用宇宙API，实现“不思而得”的直觉与洞察。
 
-三者协同的最终目标，是实现**`Goal.SageWithin_KingWithout`（内圣外王）**：以`TrueSelf`（元神）当家的清明状态（内圣），以“`Balance.True`（真平衡）”而非“`Balance.False`（伪平衡）”应对外部世界，并借助`CosmicServer`（宇宙服务器）的更高算力，在社会中创造真实的价値与功业（外王）。
+三者协同的最终目标，是实现 **`Goal.SageWithin_KingWithout`（内圣外王）** ：以`TrueSelf`（元神）当家的清明状态（内圣），以“`Balance.True`（真平衡）”而非“`Balance.False`（伪平衡）”应对外部世界，并借助`CosmicServer`（宇宙服务器）的更高算力，在社会中创造真实的价値与功业（外王）。
 
 > **AI Agent 扩展注释：元神与识神博弈策略**
 > 
